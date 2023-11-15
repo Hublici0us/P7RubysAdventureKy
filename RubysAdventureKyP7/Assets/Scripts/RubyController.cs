@@ -56,7 +56,7 @@ public class RubyController : MonoBehaviour
     {
         if (amount < 0)
         {
-            if (!isInvincible)
+            if (isInvincible)
                 return;
 
             isInvincible = true;
