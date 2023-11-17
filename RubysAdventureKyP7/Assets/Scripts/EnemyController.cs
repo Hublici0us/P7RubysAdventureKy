@@ -8,6 +8,7 @@ public class EnemyControlller : MonoBehaviour
     public float speed = 3.0f;
     public bool vertical;
     public float changeTime = 3.0f;
+    public int dmg = 1;
 
     Rigidbody2D rigidbody2d;
 
@@ -53,7 +54,7 @@ public class EnemyControlller : MonoBehaviour
         RubyController player = other.gameObject.GetComponent<RubyController>();
         if (player != null)
         {
-            player.ChangeHealth(-1);
+            player.ChangeHealth(-dmg);
         }
     }
 }
