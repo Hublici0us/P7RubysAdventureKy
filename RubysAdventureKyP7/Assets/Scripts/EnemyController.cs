@@ -35,16 +35,6 @@ public class EnemyControlller : MonoBehaviour
             direction = -direction;
             timer = changeTime;
         }
-        if (vertical)
-        {
-            animator.SetFloat("Move X", 0);
-            animator.SetFloat("Move Y", direction);
-        }
-        else
-        {
-            animator.SetFloat("Move X", direction);
-            animator.SetFloat("Move Y", 0);
-        }
     }
 
     void FixedUpdate()
