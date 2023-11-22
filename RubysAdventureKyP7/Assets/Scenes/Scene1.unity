@@ -42351,6 +42351,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3742312755170968259, guid: d039a3644a7e9f240b07733b5aef59d3, type: 3}
+      propertyPath: vertical
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742312755170968259, guid: d039a3644a7e9f240b07733b5aef59d3, type: 3}
+      propertyPath: changeTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7753021157442409406, guid: d039a3644a7e9f240b07733b5aef59d3, type: 3}
       propertyPath: m_Name
       value: bot enemy

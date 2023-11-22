@@ -30,7 +30,7 @@ public class EnemyControlller : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        if (timer < 0 )
+        if (timer < 0)
         {
             direction = -direction;
             timer = changeTime;
@@ -42,10 +42,14 @@ public class EnemyControlller : MonoBehaviour
         Vector2 position = rigidbody2d.position;
         if (vertical)
         {
+            animator.SetFloat("Move X", 0);
+            animator.SetFloat("Move Y", direction);
             position.y = position.y + Time.deltaTime * speed * direction; ;
         }
         else
         {
+            animator.SetFloat("Move X", direction);
+            animator.SetFloat("Move Y", 0);
             position.x = position.x + Time.deltaTime * speed * direction; ;
         }
 
