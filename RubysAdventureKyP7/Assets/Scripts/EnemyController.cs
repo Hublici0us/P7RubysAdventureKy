@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyControlller : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
 
     public float speed = 3.0f;
@@ -14,6 +14,7 @@ public class EnemyControlller : MonoBehaviour
 
     float timer;
     int direction = 1;
+    bool broken = true;
 
     Animator animator;
 
@@ -28,6 +29,11 @@ public class EnemyControlller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!broken)
+        {
+            return;
+        }
+
         timer -= Time.deltaTime;
 
         if (timer < 0)
@@ -39,6 +45,11 @@ public class EnemyControlller : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(!broken)
+        {
+            return;
+        }
+
         Vector2 position = rigidbody2d.position;
         if (vertical)
         {
@@ -63,5 +74,11 @@ public class EnemyControlller : MonoBehaviour
         {
             player.ChangeHealth(-dmg);
         }
+    }
+
+    public void fix()
+    {
+        broken = false;
+        rigidbody2d.simulated = false;
     }
 }

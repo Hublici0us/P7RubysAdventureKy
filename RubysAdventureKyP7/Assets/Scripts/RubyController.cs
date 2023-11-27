@@ -10,6 +10,7 @@ public class RubyController : MonoBehaviour
     public float speed = 5.0f;
     public int maxHealth = 5;
     public float timeInvincible = 2.0f;
+    public GameObject projectilePrefab;
 
     public int Health { get { return currentHealth; } }
     int currentHealth;
@@ -54,6 +55,11 @@ public class RubyController : MonoBehaviour
             if (invincibleTimer < 0)
                 isInvincible = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Launch();
+        }
     }
 
     void FixedUpdate()
@@ -80,5 +86,18 @@ public class RubyController : MonoBehaviour
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
+    }
+
+    void Launch()
+    {
+        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+        /* istantiate means to take the first parameter (projectprefab) and place it where the second parameter is (rigidbody2d.position.) with rotation of
+         * the third parameter, quaternion.identity (no rotation).
+         */
+
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
+        projectile.Launch(lookDirection, 300);
+
+        animator.SetTrigger("Launch");
     }
 }
