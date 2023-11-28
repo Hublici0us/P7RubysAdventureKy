@@ -24,6 +24,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         RubyController controller = other.GetComponent<RubyController>();
 
+
         if (controller != null)
         {
             if (controller.Health < controller.maxHealth)
@@ -32,6 +33,7 @@ public class NewBehaviourScript : MonoBehaviour
                 Destroy(gameObject);
 
                 controller.PlaySound(collectedClip);
+                healthPart.Play();
             }
         }
     }

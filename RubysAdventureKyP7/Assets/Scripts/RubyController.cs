@@ -11,6 +11,7 @@ public class RubyController : MonoBehaviour
     public int maxHealth = 5;
     public float timeInvincible = 2.0f;
     public GameObject projectilePrefab;
+    public AudioClip walkSound;
     public AudioClip launchSound;
     public AudioClip damagedSound;
 
@@ -44,7 +45,7 @@ public class RubyController : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
         Vector2 move = new Vector2(horizontal, vertical);
 
-        if (!Mathf.Approximately(move.x, 0.0f) ||  !Mathf.Approximately(move.y, 0.0f)) // || means and //
+        if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f)) // || means and //
         {
             lookDirection.Set(move.x, move.y);
             lookDirection.Normalize();
