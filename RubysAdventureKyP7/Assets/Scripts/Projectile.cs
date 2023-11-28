@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
+    public AudioClip hitSound;
 
     // Start is called before the first frame update
     void Awake()

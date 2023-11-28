@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public ParticleSystem healthPart;
+    public AudioClip collectedClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,8 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 controller.ChangeHealth(1);
                 Destroy(gameObject);
+
+                controller.PlaySound(collectedClip);
             }
         }
     }
