@@ -179,6 +179,9 @@ MonoBehaviour:
   changeTime: 3
   dmg: 1
   smokeEffect: {fileID: 4186637695865144351, guid: f2e772a42fbaab144b11b52dae62d886, type: 3}
+  fixedSound: {fileID: 8300000, guid: e7fa1971a86d60945bb64585c0ac14d5, type: 3}
+  roboWalk: {fileID: 8300000, guid: 6bfbad8ffdf387d4e87e8fa07b62f7c1, type: 3}
+  robotHit: {fileID: 8300000, guid: 709a835b61b848644946696fdd5e5a4d, type: 3}
 --- !u!95 &-938851141827007596
 Animator:
   serializedVersion: 5
@@ -214,7 +217,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
